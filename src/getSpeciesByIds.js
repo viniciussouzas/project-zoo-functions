@@ -5,14 +5,15 @@ const getSpeciesByIds = (...ids) => {
     return [];
   }
   if (ids.length === 1) {
-    const matchIds = [data.species.find((specie) => specie.id === ids[0])];
-    return matchIds;
+    const matchOneId = [data.species.find((specie) => specie.id === ids[0])];
+    return matchOneId;
   }
   if (ids.length > 1) {
     const showSpecies = [];
 
     ids.forEach((id) => {
-      showSpecies.push(data.species.find((specie) => specie.id === id));
+      const matchIds = data.species.find((specie) => specie.id === id);
+      showSpecies.push(matchIds);
     });
     return showSpecies;
   }
